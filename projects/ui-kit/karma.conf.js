@@ -18,7 +18,11 @@ module.exports = function (config) {
     coverageReporter: {
       dir: require("path").join(__dirname, "../../coverage/ui-kit"),
       subdir: ".",
-      reporters: [{ type: "html" }, { type: "text-summary" }, { type: 'lcovonly' }],
+      reporters: [
+        { type: "html" },
+        { type: "text-summary" },
+        { type: "lcovonly" },
+      ],
     },
     reporters: ["progress", "kjhtml"],
     port: 9876,
