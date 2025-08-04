@@ -1,0 +1,61 @@
+{
+  "name": ".",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "build:ui-kit": "ng-packagr -p projects/ui-kit/ng-package.json",
+    "generate:ui-kit-tests": "node projects/ui-kit/scripts/generate-test-index.js",
+    "test:ui-kit": "npm run generate:ui-kit-tests && ng test ui-kit --watch=false --browsers=ChromeHeadless",
+    "lint:ui-kit": "ng lint ui-kit",
+    "lint": "ng lint"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.1.0",
+    "@angular/compiler": "^20.1.0",
+    "@angular/core": "^20.1.0",
+    "@angular/forms": "^20.1.0",
+    "@angular/platform-browser": "^20.1.0",
+    "@angular/platform-browser-dynamic": "^20.1.0",
+    "@angular/router": "^20.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.8.1",
+    "zone.js": "^0.15.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.1.4",
+    "@angular/build": "^20.1.4",
+    "@angular/cli": "^20.1.4",
+    "@angular/compiler-cli": "^20.1.0",
+    "@angular/platform-browser-dynamic": "^20.1.4",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^24.1.0",
+    "angular-eslint": "20.1.1",
+    "eslint": "^9.29.0",
+    "glob": "^11.0.3",
+    "jasmine-core": "~5.8.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.1.0",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "8.34.1",
+    "vite": "^7.0.6"
+  }
+}

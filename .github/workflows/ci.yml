@@ -13,6 +13,7 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -23,14 +24,44 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          sudo ln -s /usr/bin/chromium-browser /usr/bin/google-chrome
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
         run: npm ci
 
       - name: Lint
-        run: npm run lint
+        run: npm run lint:ui-kit
+
+      - name: Check formatting
+        run: npx prettier --check .
 
       - name: Run tests
-        run: npm run test -- --watch=false --browsers=ChromeHeadless
+        run: npm run test:ui-kit
 
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/ui-kit
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage/ui-kit/lcov.info
+          flags: unittests
+          fail_ci_if_error: true
+          
       - name: Build library
-        run: npm run build ui-kit
+        run: npm run build:ui-kit

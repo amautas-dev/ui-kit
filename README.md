@@ -1,4 +1,8 @@
-# @amautas/ui-kit
+# @amautas/ui-kit  
+
+[![CI](https://github.com/amautas-dev/ui-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/amautas-dev/ui-kit/actions/workflows/ci.yml)  
+[![codecov](https://codecov.io/gh/amautas-dev/ui-kit/branch/develop/graph/badge.svg)](https://codecov.io/gh/amautas-dev/ui-kit)
+
 
 > Biblioteca de componentes y Design System de Amautas  
 > Reusable en todos los micro-frontends de clientes (DistriAli, …)
@@ -109,7 +113,7 @@ npm run lint
 
 npm run test (Jest)
 
-npm run build ui-kit
+npm run build:ui-kit
 
 release.yml
 
@@ -123,7 +127,7 @@ Checkout, Node.js setup con registry: https://npm.pkg.github.com/
 
 npm ci
 
-npm run build ui-kit
+npm run build:ui-kit
 
 npx semantic-release
 
