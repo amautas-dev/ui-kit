@@ -1,8 +1,7 @@
-# @amautas/ui-kit  
+# @amautas/ui-kit
 
 [![CI](https://github.com/amautas-dev/ui-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/amautas-dev/ui-kit/actions/workflows/ci.yml)  
 [![codecov](https://codecov.io/gh/amautas-dev/ui-kit/branch/develop/graph/badge.svg)](https://codecov.io/gh/amautas-dev/ui-kit)
-
 
 > Biblioteca de componentes y Design System de Amautas  
 > Reusable en todos los micro-frontends de clientes (DistriAli, …)
@@ -13,9 +12,9 @@
 
 `@amautas/ui-kit` es una librería de Angular 18 con **Standalone Components** y tema Angular Material, que incluye:
 
-- Tokens de diseño (colores, tipografía, espaciados)  
-- Componentes base: botones, inputs, tablas, formularios de búsqueda (ABM)  
-- Pipes y directivas comunes  
+- Tokens de diseño (colores, tipografía, espaciados)
+- Componentes base: botones, inputs, tablas, formularios de búsqueda (ABM)
+- Pipes y directivas comunes
 - Integración con Storybook para documentar y probar visualmente
 
 ---
@@ -183,3 +182,4 @@ En la próxima fase: npm run build:storybook para desplegar.
  Documentar guía de contribución (CONTRIBUTING.md)
 
  Añadir CODE_OF_CONDUCT.md y LICENSE si cambia a público
+```

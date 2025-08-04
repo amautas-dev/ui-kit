@@ -9,7 +9,7 @@ import {
 // Inicializa entorno de tests
 getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting()
+  platformBrowserDynamicTesting(),
 );
 
 // Importa todos los specs generados estáticamente
