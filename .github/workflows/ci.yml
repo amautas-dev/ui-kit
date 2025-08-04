@@ -24,12 +24,6 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          sudo ln -s /usr/bin/chromium-browser /usr/bin/google-chrome
-
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -39,7 +33,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Lint
         run: npm run lint:ui-kit
